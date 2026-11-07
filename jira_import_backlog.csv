@@ -1,0 +1,53 @@
+Issue Id,Issue Type,Summary,Description,Priority,Story point estimate,Parent
+1,Epic,EPIC-1: Telemetry Ingestion & Anomaly Detection,"Continuously ingest SpO2, Heart Rate and BP from the patient's wearable, validate readings and detect threshold breaches within 2 seconds on a scalable, secure gateway.",,,
+2,Epic,EPIC-2: Emergency Alerting & Caregiver Escalation,"Raise emergency alerts for critical breaches, notify the on-call caregiver within 3 seconds and escalate through the caregiver matrix reliably.",,,
+3,Epic,EPIC-3: Caregiver Response & Acknowledgement,"Let the on-call caregiver view alert details and acknowledge an alert in one action, stopping escalation and keeping an audit trail.",,,
+4,Epic,"EPIC-4: Monitoring Dashboard, Configuration & Privacy","Give patients and caregivers live visibility of vitals and alerts, let caregivers configure patient thresholds, and protect health data with access control.",,,
+10,Story,Story 1.1: Stream vitals from wearable,"As a remote patient,
+I want my wearable to continuously send SpO2, heart rate and BP to the system,
+So that my condition is monitored without hospital visits.",High,5,1
+11,Story,Story 1.2: Validate incoming telemetry,"As a on-call caregiver,
+I want corrupted or out-of-range sensor readings to be filtered out,
+So that false alarms are reduced and I can trust the alerts.",High,3,1
+12,Story,Story 1.3: Detect threshold breach within 2 s,"As a on-call caregiver,
+I want critical readings (e.g. HR > 140 BPM) flagged within 2 seconds,
+So that I can respond before the patient deteriorates.",High,8,1
+13,Story,"Story 1.4: Secure, scalable ingestion gateway","As a on-call caregiver,
+I want the gateway to handle 500 concurrent encrypted streams at 99.99% uptime,
+So that every post-operative patient is monitored reliably and securely.",High,8,1
+14,Story,Story 2.1: Create emergency alert record,"As a on-call caregiver,
+I want an emergency alert created with patient, metric, value and time,
+So that I have the full context of the emergency.",High,3,2
+15,Story,Story 2.2: Notify primary caregiver (push + SMS),"As a on-call caregiver,
+I want to receive a push and SMS within 3 seconds of a critical breach,
+So that I am informed immediately even if the app is closed.",High,5,2
+16,Story,Story 2.3: Escalate unacknowledged alerts,"As a remote patient,
+I want unacknowledged alerts escalated to the next caregiver after 60 seconds,
+So that help reaches me even if the first caregiver is unreachable.",High,8,2
+17,Story,Story 2.4: Retry and voice-call fallback,"As a remote patient,
+I want failed notifications retried and a voice call used as fallback,
+So that no emergency alert is ever lost.",Medium,5,2
+18,Story,Story 3.1: Acknowledge alert in one action,"As a on-call caregiver,
+I want to acknowledge an alert with a single tap,
+So that escalation stops and others know I am responding.",High,3,3
+19,Story,Story 3.2: Audit trail of acknowledgements,"As a on-call caregiver,
+I want my caregiver ID and acknowledgement time recorded,
+So that there is an accountable clinical and legal record.",Medium,2,3
+20,Story,Story 3.3: View alert details with current vitals,"As a on-call caregiver,
+I want to see the patient's current vitals when I open an alert,
+So that I can judge the severity and act quickly.",Medium,3,3
+21,Story,Story 4.1: Patient live vitals view,"As a remote patient,
+I want to see my own live vitals and alert status,
+So that I feel reassured and informed about my recovery.",Medium,5,4
+22,Story,Story 4.2: Caregiver multi-patient dashboard,"As a on-call caregiver,
+I want a dashboard of live vitals for my assigned patients, refreshed every 5 s,
+So that I keep situational awareness across patients.",Medium,5,4
+23,Story,Story 4.3: Configure patient thresholds,"As a on-call caregiver,
+I want to set clinical thresholds per patient,
+So that alerts match each patient's surgery and condition.",High,5,4
+24,Story,Story 4.4: View alert history,"As a on-call caregiver,
+I want to browse a patient's past alerts,
+So that I can spot trends and review responses.",Low,3,4
+25,Story,Story 4.5: Encrypt data and enforce access control,"As a remote patient,
+I want my health data encrypted and visible only to authorised caregivers,
+So that my privacy is protected.",Medium,5,4
